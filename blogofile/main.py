@@ -66,8 +66,8 @@ def do_debug():
     """
     try:
         if os.environ['BLOGOFILE_DEBUG'] == "ipython":
-            from IPython.Shell import IPShellEmbed
-            bf.ipshell = IPShellEmbed()
+            import IPython
+            bf.ipshell = IPython.embed()
         elif os.environ['BLOGOFILE_DEBUG'] != "0":
             print("Running in debug mode, waiting for debugger to connect. "
                   "Password is set to 'blogofile'")
